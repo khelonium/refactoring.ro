@@ -1,5 +1,5 @@
 {
-    "name": "ro.refactoring",
+    "name": "ro.refactoring/Refactoring",
     "type": "library",
     "description": "Utility classes",
     "keywords": ["date","interval","specification"],
