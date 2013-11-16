@@ -6,6 +6,7 @@ Install
 
 Add this to your composer.json
 
+```json
 "repositories": [
         {   
             "type": "vcs",
@@ -13,12 +14,11 @@ Add this to your composer.json
         }   
     ],  
     "require": {
-        "php": ">=5.3.3",
-        "zendframework/zendframework": ">2.2.0rc1",
+        "php": ">=5.4",
         "ro.refactoring": "*" 
     }   
 
-
+```
 
 Contents
 ===
