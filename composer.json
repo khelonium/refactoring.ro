@@ -1,0 +1,24 @@
+{
+    "name": "kheloninium/refactoring.ro",
+    "type": "library",
+    "description": "Utility classes",
+    "keywords": ["date","interval","specification"],
+    "homepage": "http://github.com/khelonium/refactoring.ro",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cosmin Dordea",
+            "email": "cosmin.dordea@refactoring.ro",
+            "homepage": "http://refactoring.ro",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Refactoring": "src"
+        }
+    }
+}
