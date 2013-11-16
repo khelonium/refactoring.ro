@@ -1,5 +1,5 @@
 {
-    "name": "khelonium/refactoring.ro",
+    "name": "refactoring.ro",
     "type": "library",
     "description": "Utility classes",
     "keywords": ["date","interval","specification"],
