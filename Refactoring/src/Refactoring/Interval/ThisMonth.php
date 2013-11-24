@@ -17,6 +17,7 @@ class ThisMonth extends Interval
 
         $day = new \DateTime();
         $this->intervalStart = $day->modify('first day of this month');
+        $day = new \DateTime();
         $this->intervalEnd   = $day->modify('last day of this month');
     }
 }

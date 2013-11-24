@@ -6,6 +6,7 @@ namespace Refactoring\Repository;
 
 
 use Refactoring\Db\Entity;
+use Refactoring\Db\SqlSpecification;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\ServiceManager\ServiceManager;
 
@@ -89,5 +90,24 @@ abstract class AbstractRepository implements ServiceManagerAwareInterface
      * @return TableGateway
      */
     abstract protected function gateway();
+
+    /**
+     * @param SqlSpecification $spec
+     * @return array
+     */
+    public function fromSpecification(SqlSpecification $spec)
+    {
+        $mapper = $this->gateway()->getResultSetPrototype()->getArrayObjectPrototype()->getDatabaseMapper();
+        $select = $spec->specify($this->gateway()->getSql()->select(), $mapper);
+
+        $result = $this->gateway()->selectWith($select);
+        $out = array();
+
+        foreach ($result as $entry) {
+            $out[] = $entry;
+        }
+
+        return $out;
+    }
 
 }

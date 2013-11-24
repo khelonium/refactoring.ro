@@ -40,6 +40,18 @@ class Entity extends \ArrayObject
         return $out;
     }
 
+    /**
+     * Returns a function that can be used to obtain db copy
+     * @return callable
+     */
+    public function getDatabaseMapper()
+    {
+        $reversed_map =  array_flip($this->map);
+        return function ($key) use ($reversed_map) {
+            return isset($reversed_map[$key])?$reversed_map[$key]:$key;
+        };
+    }
+
 
     /**
      * @param mixed $name
