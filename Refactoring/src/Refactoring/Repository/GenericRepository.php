@@ -26,13 +26,29 @@ class GenericRepository extends AbstractRepository
         $this->gateway = $gateway;
     }
 
+    public function forKey($key, $value)
+    {
+        $mapper = $this->gateway()->getResultSetPrototype()->getArrayObjectPrototype()->getDatabaseMapper();
+        $select = $this->gateway()->getSql()->select();
+        $select->where->equalTo($mapper($key), $value);
+
+        $result = $this->gateway()->selectWith($select);
+        $out = array();
+
+        foreach ($result as $entry) {
+            $out[] = $entry;
+        }
+
+        return $out;
+    }
+
     /**
      * Returns the table gateway used by the main entity
      * @return TableGateway
      */
     protected function gateway()
     {
-        // TODO: Implement gateway() method.
+        return $this->gateway;
     }
 
 }
