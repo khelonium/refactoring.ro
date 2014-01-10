@@ -14,7 +14,7 @@ class SpecificMonth extends Interval
 
     public function __construct(\Datetime $day)
     {
-        $this->intervalStart = new \DateTime($day->format('Y-m-01'));
-        $this->intervalEnd   = new \DateTime($day->format('Y-m-t'));
+        $this->intervalStart = new \DateTime($day->format('Y-m-01 00:00:00'));
+        $this->intervalEnd   = new \DateTime($day->format('Y-m-t 23:59:59'));
     }
 }
