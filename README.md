@@ -1,6 +1,10 @@
 refactoring.ro
 ==============
 
+
+
+![alt text](https://travis-ci.org/khelonium/cashtrack.svg?branch=master "Travis Build")
+
 Install
 ======
 
